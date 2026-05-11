@@ -3,62 +3,40 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GreenClaim | El problema</title>
+<title>GreenClaim | Investigación de Cumplimiento Ambiental B2B</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F7F9F4;          /* Blanco cálido/verdoso muy suave */
-  --bg-card: #FFFFFF;     /* Fondo blanco puro para contraste */
-  --accent: #2A7241;      /* Verde bosque profundo */
-  --accent-light: #52B06F;/* Verde hoja vibrante */
-  --accent-soft: #EBF2ED; /* Verde agua/menta súper claro */
-  --text-main: #1C2E23;   /* Verde muy oscuro (casi negro) para textos */
-  --text-muted: #5D7063;  /* Gris con tono verdoso */
-  --border: #DCE3DD;      /* Bordes suaves */
-  --radius: 28px;         /* Curvas amigables y orgánicas */
-  --radius-btn: 999px;    /* Botones totalmente redondeados */
-  --shadow: 0 12px 40px rgba(42, 114, 65, 0.06); /* Sombra luminosa */
+  --bg: #F7F9F4;          
+  --bg-card: #FFFFFF;     
+  --accent: #1C402B;      /* Verde industrial más oscuro y sobrio */
+  --accent-light: #2A7241;
+  --accent-soft: #E8EDE9; 
+  --text-main: #1A241E;   
+  --text-muted: #4A5C50;  
+  --border: #D1D9D3;      
+  --radius: 12px;         /* Curvas menos pronunciadas, más corporativas */
+  --radius-btn: 6px;      /* Botones estructurados, no píldoras */
+  --shadow: 0 4px 20px rgba(28, 64, 43, 0.08); 
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text-main);
   font-family: "Space Grotesk", sans-serif;
   overflow-x: hidden;
-  line-height: 1.65;
+  line-height: 1.6;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-  border: none;
-  background: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-img, svg {
-  display: block;
-  max-width: 100%;
-}
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
 
 .container {
-  width: min(1180px, calc(100% - 48px));
+  width: min(1080px, calc(100% - 48px));
   margin: 0 auto;
 }
 
@@ -67,13 +45,12 @@ img, svg {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background: rgba(247, 249, 244, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
 }
 .nav-inner {
-  min-height: 76px;
+  min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,672 +59,219 @@ img, svg {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: .01em;
   color: var(--accent);
 }
 
 /* --- BUTTONS --- */
-.pill {
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  height: 48px;
-  padding: 0 28px;
+  gap: 8px;
+  height: 44px;
+  padding: 0 24px;
   border-radius: var(--radius-btn);
   border: 1px solid var(--border);
   color: var(--text-main);
-  font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   background: var(--bg-card);
 }
-.pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  border-color: var(--accent-light);
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
-.pill.green {
+.btn.primary {
   background: var(--accent);
   color: white;
   border-color: transparent;
 }
-.pill.green:hover {
+.btn.primary:hover {
   background: var(--accent-light);
-  box-shadow: 0 8px 24px rgba(82, 176, 111, 0.25);
 }
 
-main {
-  padding-top: 76px;
-}
+main { padding-top: 70px; }
 
 /* --- HERO --- */
 .hero {
-  position: relative;
-  min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px 0 80px;
-  /* Aquí agregamos el degradado oscuro (overlay) y la imagen de fondo */
-  background: linear-gradient(
-      rgba(28, 46, 35, 0.75), /* Tono verde muy oscuro con 75% de opacidad */
-      rgba(28, 46, 35, 0.85)
-    ),
-    url('https://farsouthexp.com/wp-content/uploads/2023/07/patagonia-tierra-del-fuego-autumn-benny-hanigal-21.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(26, 36, 30, 0.85), rgba(26, 36, 30, 0.9)), url('https://farsouthexp.com/wp-content/uploads/2023/07/patagonia-tierra-del-fuego-autumn-benny-hanigal-21.jpg') center/cover;
+  padding: 100px 0 120px;
+  color: white;
 }
 .hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
+  max-width: 800px;
 }
-.kicker {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.95rem;
+.hero-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  font-size: 0.85rem;
   font-weight: 600;
-  /* Letra blanca y fondo translúcido para el globo superior */
-  color: #FFFFFF;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin: 0 0 24px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(4px);
-  border-radius: 99px;
-  display: inline-block;
+  margin-bottom: 24px;
 }
 .hero h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
-  line-height: 1.1;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.15;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #FFFFFF; /* Título en blanco para resaltar */
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
 }
-.counter {
-  margin: 24px 0 16px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: clamp(3rem, 8vw, 6.5rem);
-  line-height: 1;
-  color: #00DC82; /* Un verde más vibrante que brilla sobre el fondo oscuro */
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  text-shadow: 0 0 30px rgba(0, 220, 130, 0.2); /* Pequeño resplandor */
-}
-.subcounter {
+.hero p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
   margin: 0 0 40px;
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.8); /* Texto secundario en blanco con ligera transparencia */
-}
-
-/* SOCIAL PROOF BAND */
-.trust-band {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-card);
-  padding: 30px 0;
-}
-.trust-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-.trust-inner span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.trust-inner strong {
-  color: var(--accent);
+  max-width: 650px;
 }
 
 /* --- SECTIONS --- */
-.section {
-  position: relative;
-  padding: 100px 0;
-}
-.section.white {
-  background: var(--bg-card);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.section-title {
-  margin: 0 0 20px;
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-}
-.section-lead {
-  margin: 0 0 56px;
-  color: var(--text-muted);
-  max-width: 800px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
+.section { padding: 80px 0; }
+.section.white { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section-title { font-size: 2rem; font-weight: 700; margin: 0 0 16px; color: var(--text-main); }
+.section-lead { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 0 48px; }
 
-/* --- CARDS & GRIDS --- */
-.grid-3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-.stat-card, .problem-card, .feature-card, .team-card {
-  background: var(--bg-card);
+/* --- STATS GRID --- */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.stat-card {
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.stat-card:hover, .problem-card:hover, .feature-card:hover, .team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
-  border-color: rgba(82, 176, 111, 0.3);
-}
-.stat-card {
-  padding: 40px 32px;
+  padding: 32px 24px;
   text-align: center;
 }
 .stat-num {
   font-family: "JetBrains Mono", monospace;
-  color: var(--accent);
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: 2.5rem;
   font-weight: 600;
-  margin: 0 0 16px;
+  color: var(--accent);
+  margin: 0 0 12px;
   line-height: 1;
 }
-.stat-desc {
-  margin: 0 0 16px;
-  color: var(--text-main);
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-.source {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
+.stat-desc { font-size: 1rem; color: var(--text-main); margin: 0; font-weight: 500; }
 
-.problem-grid, .team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-.problem-card {
-  padding: 32px;
-  position: relative;
-  overflow: hidden;
-}
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  background: var(--accent-soft);
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-.problem-card h3, .feature-card h3, .team-card h3 {
-  margin: 0 0 12px;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--text-main);
-}
-.problem-card p, .feature-card p, .team-card p {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 1.05rem;
-}
-
-/* --- CHART --- */
-.chart {
-  margin-top: 40px;
-  display: grid;
-  gap: 24px;
-  max-width: 900px;
-}
-.bar-row {
-  display: grid;
-  grid-template-columns: minmax(200px, 240px) 1fr minmax(80px, 100px);
-  align-items: center;
-  gap: 20px;
-}
-.bar-label {
-  font-weight: 500;
-  font-size: 1.05rem;
-  color: var(--text-main);
-}
-.bar-track {
-  height: 12px; 
-  border-radius: 99px;
-  background: var(--border);
-  overflow: hidden;
-}
-.bar {
-  width: 0;
-  height: 100%;
-  border-radius: 99px;
-  background: linear-gradient(90deg, var(--accent-light), var(--accent));
-  transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.chart.in-view .bar {
-  width: var(--w);
-}
-.bar-value {
-  text-align: right;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--accent);
-}
-.callout {
-  margin-top: 40px;
-  padding: 28px;
-  background: var(--accent-soft);
-  border-radius: 16px;
-  font-size: 1.1rem;
-  color: var(--text-main);
-  text-align: center;
-}
-
-/* --- SOLUTION --- */
-.solution-wrap {
-  margin-top: 20px;
-}
-.flow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.step {
-  padding: 32px 24px;
-  background: var(--bg);
+/* --- BOTTLENECKS --- */
+.bottleneck-card {
+  background: var(--bg-card);
   border-radius: var(--radius);
+  padding: 32px;
   border: 1px solid var(--border);
-  text-align: center;
+  box-shadow: var(--shadow);
 }
-.step-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
+.bottleneck-card h3 { margin: 0 0 12px; font-size: 1.25rem; color: var(--text-main); }
+.bottleneck-card p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
+.icon-wrap {
+  width: 48px; height: 48px;
+  background: var(--accent-soft);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
   margin-bottom: 20px;
 }
-.step h3 {
-  margin: 0 0 12px;
-  font-size: 1.25rem;
-}
-.step p {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 1rem;
-}
-.features {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-.feature-card {
-  padding: 36px;
-}
-.feature-card svg {
-  width: 36px;
-  height: 36px;
-  margin-bottom: 24px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.icon-wrap svg { stroke: var(--accent); width: 24px; height: 24px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* --- RESEARCH BLOCK --- */
+.research-block {
   background: var(--accent-soft);
-  padding: 8px;
-  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+  padding: 40px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-top: 60px;
 }
+.research-block h3 { margin: 0 0 12px; font-size: 1.4rem; color: var(--accent); }
+.research-block p { margin: 0; color: var(--text-main); font-size: 1.05rem; line-height: 1.6; }
 
 /* --- TEAM --- */
-.team-card {
-  padding: 32px;
-  text-align: center;
-}
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+.team-card { text-align: center; padding: 24px; }
 .team-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-.team-meta {
-  margin-top: 16px;
-  display: inline-block;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  width: 72px; height: 72px;
   background: var(--bg);
-  padding: 8px 16px;
-  border-radius: 99px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 700; font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.team-card h4 { margin: 0 0 4px; font-size: 1.1rem; color: var(--text-main); }
+.team-card p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+.team-card span { display: block; margin-top: 8px; font-size: 0.8rem; font-weight: 600; color: var(--accent); }
+
+.trust-logos {
+  display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px;
+  padding-top: 40px; border-top: 1px solid var(--border);
+  font-size: 0.9rem; color: var(--text-muted); font-weight: 600; align-items: center;
 }
 
-/* --- CTA --- */
+/* --- CTA SECTION --- */
 .cta-panel {
-  padding: 100px 0 120px;
-  background: var(--bg);
-}
-.cta-box {
-  border-radius: 32px;
   background: var(--accent);
   color: white;
-  padding: 60px 40px;
+  padding: 80px 0;
   text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 20px 40px rgba(42, 114, 65, 0.2);
 }
-.cta-box h2 {
-  margin: 0 0 20px;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  line-height: 1.1;
-  color: white;
-}
-.cta-box p {
-  margin: 0 auto 40px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
-  max-width: 700px;
-}
-.cta-actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-.cta-box .pill {
-  height: 56px;
-  font-size: 1.1rem;
-}
-.cta-box .pill.green {
-  background: white;
-  color: var(--accent);
-}
-.cta-box .pill.green:hover {
-  background: var(--bg);
-  box-shadow: none;
-}
-.note {
-  margin-top: 24px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-}
+.cta-inner { max-width: 700px; margin: 0 auto; }
+.cta-panel h2 { margin: 0 0 20px; font-size: 2.2rem; color: white; }
+.cta-panel p { margin: 0 0 32px; font-size: 1.1rem; color: rgba(255,255,255,0.9); }
+.cta-panel .btn.primary { background: white; color: var(--accent); height: 50px; font-size: 1.05rem; }
+.cta-panel .btn.primary:hover { background: var(--bg); }
+.disclaimer { margin-top: 24px; font-size: 0.8rem; color: rgba(255,255,255,0.6); }
 
 /* --- FOOTER --- */
-.footer {
-  padding: 40px 0;
-  background: var(--bg-card);
-  border-top: 1px solid var(--border);
-}
-.footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.footer-center {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-.badge-small {
-  padding: 6px 14px;
-  border-radius: 99px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.85rem;
-}
+.footer { padding: 32px 0; background: var(--bg-card); text-align: center; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); }
 
-/* --- UTILS --- */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --- RESPONSIVE --- */
-@media (min-width: 768px) {
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 900px) {
-  .flow {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 @media (max-width: 640px) {
-  .nav-inner { min-height: 68px; }
-  .brand span.word { display: none; }
-  .hero { padding-top: 20px; }
-  .counter { font-size: clamp(2.8rem, 12vw, 4.5rem); }
-  .bar-row { grid-template-columns: 1fr; gap: 8px; margin-bottom: 24px; }
-  .bar-value { text-align: left; }
-  .flow { grid-template-columns: 1fr; }
-  .cta-box { padding: 40px 24px; }
-  .cta-actions { flex-direction: column; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .hero { padding: 60px 0 80px; }
+  .research-block { padding: 24px; }
+  .cta-panel { padding: 60px 24px; }
 }
 </style>
 </head>
 <body>
+
 <nav class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#top" aria-label="GreenClaim">
-      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#2A7241"/>
-        <path d="M11.33 16.66L7 12.34l1.41-1.41 2.92 2.92 5.66-5.66L18.4 9.6l-7.07 7.06z" fill="#52B06F"/>
-      </svg>
-      <span class="word">GreenClaim</span>
-    </a>
-    <a class="pill" href="https://calendar.app.google/ZTpYthex6pS91BJt9" target="_blank" rel="noopener noreferrer">Agendar reunión</a>
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/><path d="M11.33 16.66L7 12.34l1.41-1.41 2.92 2.92 5.66-5.66L18.4 9.6l-7.07 7.06z" fill="currentColor"/></svg>
+      GreenClaim
+    </div>
+    <a href="https://calendar.app.google/ZTpYthex6pS91BJt9" class="btn primary" target="_blank" rel="noopener">Agendar entrevista</a>
   </div>
 </nav>
 
-<main id="top">
+<main>
   <section class="hero">
-    <div class="hero-inner container">
-      <div class="kicker">Responsabilidad ambiental con impacto real</div>
-      <h1>Detén la fuga de capital por no medir tus emisiones</h1>
-      <div class="counter" id="bleedingCounter">USD $90,000,000</div>
-      <p class="subcounter">Perdidos por la industria del Biobío (RETC 2024 · MMA Chile)</p>
-      <div class="hero-cta-wrap">
-        <a class="pill green" href="#por-que">Entender el impacto ↓</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="trust-band">
-    <div class="container trust-inner">
-      <span>Respaldado por:</span>
-      <span><strong>GEARBOX</strong></span>
-      <span><strong>FACULTAD DE INGENIERÍA UDEC</strong></span>
-    </div>
-  </div>
-
-  <section class="section" id="por-que">
-    <div class="container">
-      <h2 class="section-title">¿De dónde surge esta pérdida?</h2>
-      <p class="section-lead">No es una cifra abstracta. Es la suma de impuestos, compensaciones, contratos perdidos y proyectos que se retrasan cuando una empresa carece de trazabilidad ecológica y estrategia de reducción.</p>
-      <div class="grid-3">
-        <article class="stat-card reveal count-card" data-count="25000">
-          <p class="stat-num">≥ <span class="count-value">25.000</span>t</p>
-          <p class="stat-desc">Umbral de CO₂ que activa el Impuesto Verde chileno.</p>
-          <p class="source">Ley 20.780 · Art. 8</p>
-        </article>
-        <article class="stat-card reveal count-card" data-count="5">
-          <p class="stat-num">$<span class="count-value">5</span> / ton</p>
-          <p class="stat-desc">Tarifa a pagar sin estrategia de mitigación ambiental.</p>
-          <p class="source">Impuesto a las emisiones</p>
-        </article>
-        <article class="stat-card reveal count-card" data-count="22">
-          <p class="stat-num">$<span class="count-value">22</span>M+</p>
-          <p class="stat-desc">Mercado de compensaciones certificadas en 2024.</p>
-          <p class="source">Ministerio del Medio Ambiente</p>
-        </article>
-      </div>
+    <div class="container hero-inner">
+      <span class="hero-tag">Investigación de Cumplimiento B2B</span>
+      <h1>No dejes que tu esfuerzo ambiental se quede en un Excel.</h1>
+      <p>Las plantas industriales en Chile pierden millones al año en impuestos por la dificultad administrativa de certificar sus reducciones. Ayúdanos a diseñar la herramienta definitiva para automatizar la medición, reporte y compensación (MRV) de fuentes fijas.</p>
+      <a href="https://calendar.app.google/ZTpYthex6pS91BJt9" class="btn primary" target="_blank" rel="noopener">Participar en entrevista (20 min)</a>
     </div>
   </section>
 
   <section class="section white">
     <div class="container">
-      <h2 class="section-title">El mapa del impacto</h2>
-      <div class="problem-grid">
-        <article class="problem-card reveal">
-          <div class="badge">Exportaciones</div>
-          <h3>Regulación Europea (CBAM)</h3>
-          <p>Desde 2026, las empresas pierden acceso al mercado europeo si no demuestran emisiones con trazabilidad limpia y auditable.</p>
-        </article>
-        <article class="problem-card reveal">
-          <div class="badge">Impuestos</div>
-          <h3>Fuga de Capital</h3>
-          <p>Sin una estrategia de reducción, tu empresa asume el costo total impositivo, limitando tu capacidad de inversión sustentable.</p>
-        </article>
-        <article class="problem-card reveal">
-          <div class="badge">Oportunidad</div>
-          <h3>Créditos de Carbono</h3>
-          <p>Tus esfuerzos de reducción tienen valor. Sin un proceso de certificación (MRV), ese beneficio nunca se captura.</p>
-        </article>
-        <article class="problem-card reveal">
-          <div class="badge">Ley 2030</div>
-          <h3>Cambio Climático</h3>
-          <p>Empresas sobre 100.000 UF deberán medir y compensar por ley. La transición ecológica dejó de ser opcional.</p>
-        </article>
-        <article class="problem-card reveal">
-          <div class="badge">Finanzas Verdes</div>
-          <h3>Riesgo ESG</h3>
-          <p>Pérdida de acceso a créditos preferenciales, financiamiento sostenible y licitaciones con due diligence ambiental.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="biobio">
-    <div class="container">
-      <h2 class="section-title">El desafío en el Biobío</h2>
-      <p class="section-lead">Nuestra región concentra operaciones intensivas. La falta de instrumentación vuelve la fuga de capital invisible hasta que es muy tarde para actuar de forma sostenible.</p>
-      <div class="chart reveal" id="chart">
-        <div class="bar-row">
-          <div class="bar-label">Celulosa y papel</div>
-          <div class="bar-track"><div class="bar" style="--w:92%"></div></div>
-          <div class="bar-value">Impacto Crítico</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Energía eléctrica</div>
-          <div class="bar-track"><div class="bar" style="--w:84%"></div></div>
-          <div class="bar-value">Impacto Alto</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Química y Petroquímica</div>
-          <div class="bar-track"><div class="bar" style="--w:70%"></div></div>
-          <div class="bar-value">Impacto Medio</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Forestal Maderera</div>
-          <div class="bar-track"><div class="bar" style="--w:61%"></div></div>
-          <div class="bar-value">Impacto Medio</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-label">Manufactura General</div>
-          <div class="bar-track"><div class="bar" style="--w:52%"></div></div>
-          <div class="bar-value">Moderado</div>
-        </div>
-      </div>
-      <div class="callout reveal">
-        Solo optimizando el reporte técnico de fuentes fijas en la región, las industrias podrían liberar millones para reinvertir en tecnologías más limpias y eficientes.
-      </div>
-    </div>
-  </section>
-
-  <section class="section white">
-    <div class="container">
-      <h2 class="section-title">Cómo te ayudamos a transitar</h2>
-      <p class="section-lead">Acompañamos tu proceso: desde la captura de datos en terreno hasta la validación de tus esfuerzos medioambientales.</p>
+      <h2 class="section-title">El problema en la industria hoy</h2>
+      <p class="section-lead">Las empresas están invirtiendo en eficiencia, pero la carga probatoria impide transformar esos logros en beneficios tributarios.</p>
       
-      <div class="solution-wrap reveal">
-        <div class="flow">
-          <div class="step">
-            <span class="step-number">1</span>
-            <h3>Medición Limpia</h3>
-            <p>Sensores IoT en terreno que capturan la realidad operativa de tus fuentes fijas.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <h3>Análisis Vital</h3>
-            <p>Detección de ineficiencias y proyección de escenarios para reducir tu huella.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <h3>Certificación</h3>
-            <p>Alineamiento con los estándares ambientales locales y globales de transparencia.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">4</span>
-            <h3>Monetización</h3>
-            <p>Conversión de tus reducciones de CO₂ en ahorro real o certificados de mercado.</p>
-          </div>
+      <div class="grid-3">
+        <div class="stat-card">
+          <p class="stat-num">10 de 105</p>
+          <p class="stat-desc">Establecimientos sujetos al Impuesto Verde en la región logran acceder a compensaciones hoy.</p>
         </div>
-
-        <div class="features">
-          <div class="feature-card reveal">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-            </svg>
-            <h3>Hardware Integrado</h3>
-            <p>Telemetría de bajo impacto compatible con tu infraestructura industrial existente.</p>
-          </div>
-          <div class="feature-card reveal">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <path d="M3 9h18"></path>
-              <path d="M9 21V9"></path>
-            </svg>
-            <h3>Software de Trazabilidad</h3>
-            <p>Visualiza el pulso de tus emisiones en un panel claro, amigable y auditable al instante.</p>
-          </div>
-          <div class="feature-card reveal">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-              <line x1="12" y1="22.08" x2="12" y2="12"></line>
-            </svg>
-            <h3>Asesoría Sostenible</h3>
-            <p>Te guiamos paso a paso en el Sistema de Compensación de Emisiones chileno.</p>
-          </div>
+        <div class="stat-card">
+          <p class="stat-num">&gt;25.000t</p>
+          <p class="stat-desc">Umbral de emisiones de CO₂ que activa la obligación tributaria sin una estrategia de mitigación certificada.</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-num">$5 / ton</p>
+          <p class="stat-desc">Tarifa base impositiva que la industria asume íntegramente por falta de trazabilidad auditable.</p>
         </div>
       </div>
     </div>
@@ -755,104 +279,89 @@ main {
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title" style="text-align: center;">Quienes impulsan el cambio</h2>
-      <div class="team-grid" style="margin-top: 50px;">
-        <article class="team-card reveal">
-          <div class="team-avatar">GD</div>
-          <h3>Gian Del Valle</h3>
-          <p>Ingeniero Civil Industrial</p>
-          <span class="team-meta">Estrategia & Sostenibilidad</span>
-        </article>
-        <article class="team-card reveal">
-          <div class="team-avatar">VO</div>
-          <h3>Vasco Ordoñez</h3>
-          <p>Ingeniero Civil Química</p>
-          <span class="team-meta">Procesos & Medio Ambiente</span>
-        </article>
-        <article class="team-card reveal">
-          <div class="team-avatar">MG</div>
-          <h3>Martin Gonzalez</h3>
-          <p>Ingeniero Civil Informática</p>
-          <span class="team-meta">Tecnología & Datos Transparentes</span>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-panel" id="cta">
-    <div class="container">
-      <div class="cta-box reveal">
-        <h2>Únete a la transición sostenible</h2>
-        <p>Estamos realizando pilotos con industrias clave. Agenda una sesión breve y obtén un diagnóstico gratuito basado en tus datos RETC para ver cómo podemos ayudar.</p>
-        <div class="cta-actions">
-          <a class="pill green" href="https://calendar.app.google/ZTpYthex6pS91BJt9" target="_blank" rel="noopener noreferrer">Agendar Diagnóstico Gratuito</a>
+      <h2 class="section-title">¿Por qué la industria no está compensando?</h2>
+      <p class="section-lead">Sabemos que el problema no es la falta de voluntad, sino la carga administrativa y el riesgo normativo.</p>
+      
+      <div class="grid-3">
+        <div class="bottleneck-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <h3>Datos Fragmentados</h3>
+          <p>Recopilar información para el RETC requiere cruzar planillas manuales de distintas áreas, aumentando el margen de error y el tiempo invertido por el equipo de medioambiente.</p>
         </div>
-        <div class="note">Trabajamos bajo estrictos acuerdos de confidencialidad para proteger tu información.</div>
+        <div class="bottleneck-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h3>Riesgo de Auditoría</h3>
+          <p>Las normativas exigen un nivel de precisión que la instrumentación tradicional y el reporte manual fragmentado no siempre pueden garantizar ante una fiscalización.</p>
+        </div>
+        <div class="bottleneck-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <h3>Burocracia Normativa</h3>
+          <p>Transformar una reducción real en un certificado válido requiere metodologías de MRV complejas que desvían al equipo interno de su operación principal.</p>
+        </div>
+      </div>
+
+      <div class="research-block">
+        <h3>Estamos en etapa de investigación. No tenemos nada que venderte hoy.</h3>
+        <p>Antes de desarrollar nuestra plataforma, queremos entender la realidad de la planta. Nuestro objetivo es conversar con Gerentes de Sustentabilidad, Medioambiente, Finanzas o Compliance para mapear exactamente dónde duele más el proceso de reporte y validación ambiental.</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <a class="brand" href="#top" aria-label="GreenClaim">
-        <span class="word">GreenClaim</span>
-      </a>
-      <div class="footer-center">Plataforma Tecnológica para el Medio Ambiente · Concepción, Chile</div>
-      <div class="badge-small">Incubado en Gearbox UdeC</div>
+  <section class="section white">
+    <div class="container">
+      <h2 class="section-title">Respaldo y Equipo Técnico</h2>
+      <p class="section-lead">Somos un equipo multidisciplinario enfocado en resolver el desafío de la trazabilidad industrial de forma rigurosa.</p>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">GD</div>
+          <h4>Gian Del Valle</h4>
+          <p>Ingeniería Civil Industrial</p>
+          <span>Operaciones & Estrategia</span>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">VO</div>
+          <h4>Vasco Ordoñez</h4>
+          <p>Ingeniería Civil Química</p>
+          <span>Procesos Industriales</span>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">MG</div>
+          <h4>Martin Gonzalez</h4>
+          <p>Ingeniería Civil Informática</p>
+          <span>Arquitectura de Datos</span>
+        </div>
+      </div>
+
+      <div class="trust-logos">
+        <span>Respaldado académicamente e incubado por:</span>
+        <span>GEARBOX PRE-ACELERADORA</span>
+        <span>FACULTAD DE INGENIERÍA UDEC</span>
+      </div>
     </div>
-  </footer>
+  </section>
+
+  <section class="cta-panel">
+    <div class="container cta-inner">
+      <h2>Ayúdanos a construir la solución que la industria necesita</h2>
+      <p>Agenda una videollamada de 20-30 minutos. Como agradecimiento por tu tiempo, te compartiremos un resumen de nuestros hallazgos sobre cómo la industria en el Biobío se está preparando para el CBAM y las nuevas normativas.</p>
+      <a href="https://calendar.app.google/ZTpYthex6pS91BJt9" class="btn primary" target="_blank" rel="noopener">Agendar entrevista en Google Calendar</a>
+      <p class="disclaimer">Toda la información discutida es estrictamente confidencial y se utilizará únicamente para fines de investigación y desarrollo del proyecto.</p>
+    </div>
+  </section>
 </main>
 
-<script>
-// Contador Suave
-const formatUSD = n => 'USD $' + Math.round(n).toLocaleString('en-US');
-let counterValue = 90000000;
-const counterEl = document.getElementById('bleedingCounter');
-counterEl.textContent = formatUSD(counterValue);
-setInterval(() => {
-  counterValue += 5.7;
-  counterEl.textContent = formatUSD(counterValue);
-}, 1000);
+<footer class="footer">
+  <div class="container">
+    GreenClaim © 2026 · Proyecto de investigación en cumplimiento ambiental. Concepción, Chile.
+  </div>
+</footer>
 
-// Observador de Intersecciones (Scroll Animations)
-const revealEls = document.querySelectorAll('.reveal');
-const counterCards = document.querySelectorAll('.count-card');
-const chart = document.getElementById('chart');
-
-const io = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('in-view');
-    
-    if (entry.target.classList.contains('count-card') && !entry.target.dataset.animated) {
-      entry.target.dataset.animated = '1';
-      const valueEl = entry.target.querySelector('.count-value');
-      const target = Number(entry.target.dataset.count || 0);
-      const duration = 1800; // Más lento y orgánico
-      const start = performance.now();
-      
-      const step = now => {
-        const p = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        let value = Math.round(target * eased);
-        
-        if (target === 25000) valueEl.textContent = value.toLocaleString('es-CL');
-        else valueEl.textContent = value.toLocaleString('en-US');
-        
-        if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    }
-  });
-}, { threshold: 0.15 });
-
-revealEls.forEach(el => io.observe(el));
-counterCards.forEach(el => io.observe(el));
-if (chart) io.observe(chart);
-
-document.querySelectorAll('.problem-card, .feature-card, .team-card').forEach((el, idx) => {
-  el.style.transitionDelay = `${(idx % 3) * 120}ms`;
-});
-</script>
 </body>
 </html>
